@@ -34,6 +34,13 @@ h1 {
   color: #475569;
 }
 
+.builder {
+  margin: 8px 0 0;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .composer {
   display: grid;
   gap: 12px;
