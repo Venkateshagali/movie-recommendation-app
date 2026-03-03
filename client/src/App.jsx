@@ -67,7 +67,6 @@ function App() {
         <p className="subtitle">
           Describe your taste and get 5 curated movie picks with short reasons.
         </p>
-        <p className="builder">Developed by Venkatesha S</p>
 
         <div className="composer">
           <textarea

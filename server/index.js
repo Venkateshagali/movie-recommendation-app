@@ -81,8 +81,14 @@ fastify.post("/recommend", async (request, reply) => {
     return { movies };
   } catch (err) {
     request.log.error(err);
+    if (err?.status === 429) {
+      return reply.code(429).send({
+        error:
+          "OpenAI quota exceeded for current API key. Add billing or use another key in backend Vercel settings.",
+      });
+    }
     return reply.code(500).send({
-      error: "Unable to fetch AI response at the moment.",
+      error: err?.message || "Unable to fetch AI response at the moment.",
     });
   }
 });
